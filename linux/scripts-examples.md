@@ -1,8 +1,6 @@
 
 
----
 
-````md
 # Chapter 3 – Scripting Basics & Bash Automation
 
 ## What is Scripting
