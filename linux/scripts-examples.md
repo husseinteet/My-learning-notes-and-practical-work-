@@ -34,9 +34,8 @@
 
 ### Steps
 1. Create the script file
-```bash
 nano my-script.sh
-````
+
 
 2. Add the shebang at the top
 
