@@ -2,7 +2,6 @@
 
 ---
 
-
 ````md
 # Chapter 3 – Scripting Basics & Bash Automation
 
@@ -36,24 +35,29 @@
 1. Create the script file
 ```bash
 nano my-script.sh
-
+````
 
 2. Add the shebang at the top
 
+```bash
 #!/bin/bash
-
+```
 
 3. Write the command
 
+```bash
 echo "Hello World"
+```
 
 4. Give execute permission
 
+```bash
 chmod 777 my-script.sh
-
+```
 
 5. Run the script
 
+```bash
 ./my-script.sh
 ```
 
@@ -224,5 +228,3 @@ echo "Network traffic saved to $OUTPUT_FILE"
 ```
 
 ---
-
-
