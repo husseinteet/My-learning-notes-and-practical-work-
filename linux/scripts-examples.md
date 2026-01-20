@@ -40,27 +40,27 @@ nano my-script.sh
 
 2. Add the shebang at the top
 
-```bash
+
 #!/bin/bash
-```
+
 
 3. Write the command
 
-```bash
+
 echo "Hello World"
-```
+
 
 4. Give execute permission
 
-```bash
+
 chmod 777 my-script.sh
-```
+
 
 5. Run the script
 
-```bash
+
 ./my-script.sh
-```
+
 
 ---
 
