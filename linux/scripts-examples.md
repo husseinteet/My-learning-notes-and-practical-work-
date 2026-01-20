@@ -1,29 +1,26 @@
 
 
+---
+
+
 ````md
 # Chapter 3 – Scripting Basics & Bash Automation
 
-## What is Scripting?
-- Scripting refers to the process of writing small programs to **automate tasks**
-- Scripts are commonly used to execute repetitive or administrative tasks efficiently
+## What is Scripting
+- Scripting refers to writing small programs to **automate tasks**
+- Commonly used to execute repetitive or administrative tasks efficiently
 
----
-
-## Why Use Scripting?
+## Why Use Scripting
 - **Automation**: Automates repetitive tasks, saving time and reducing human error
 - **Efficiency**: Executes complex operations with a single command
 - **Flexibility**: Easily adaptable to different tasks and environments
 - **Integration**: Scripts can interact with other applications and systems
-
----
 
 ## Common Scripting Languages
 - **Bash**: Used in Unix/Linux systems for automating command-line tasks
 - **Python**: Used in web development, automation, and data analysis
 - **JavaScript**: Used to create interactive web pages
 - **PowerShell**: Used in Windows environments for system administration and automation
-
----
 
 ## Core Scripting Concepts
 - **Variables**: Store data used in a script
@@ -35,32 +32,35 @@
 
 ## Simple Bash Script (Hello World)
 
-### Steps:
-1. Create the script file  
-   ```bash
-   nano my-script.sh
+### Steps
+1. Create the script file
+```bash
+nano my-script.sh
 ````
 
 2. Add the shebang at the top
 
-   ```bash
-   #!/bin/bash
-   ```
+```bash
+#!/bin/bash
+```
+
 3. Write the command
 
-   ```bash
-   echo "Hello World"
-   ```
+```bash
+echo "Hello World"
+```
+
 4. Give execute permission
 
-   ```bash
-   chmod 777 my-script.sh
-   ```
+```bash
+chmod 777 my-script.sh
+```
+
 5. Run the script
 
-   ```bash
-   ./my-script.sh
-   ```
+```bash
+./my-script.sh
+```
 
 ---
 
@@ -82,7 +82,7 @@ BACKUP_FILE="backup_$TIMESTAMP.tar.gz"
 
 tar -czvf "$DEST_DIR/$BACKUP_FILE" "$SRC_DIR"
 
-echo "Backup of '$SRC_DIR' created at '$DEST_DIR/$BACKUP_FILE'."
+echo "Backup of $SRC_DIR created at $DEST_DIR/$BACKUP_FILE"
 ```
 
 ---
@@ -95,10 +95,7 @@ echo "Backup of '$SRC_DIR' created at '$DEST_DIR/$BACKUP_FILE'."
 OUTPUT_FILE="device_info.txt"
 
 {
-    echo "=============================="
-    echo "Device Information Collection"
-    echo "=============================="
-
+    echo "Device Information"
     echo "Hostname: $(hostname)"
     echo "Operating System: $(uname -o)"
     echo "Kernel Version: $(uname -r)"
@@ -111,11 +108,9 @@ OUTPUT_FILE="device_info.txt"
 
     echo "Network Interfaces:"
     ip a | grep -E '^[0-9]+:'
-
-    echo "=============================="
 } > "$OUTPUT_FILE"
 
-echo "Device information saved to $OUTPUT_FILE."
+echo "Device information saved to $OUTPUT_FILE"
 ```
 
 ---
@@ -128,8 +123,6 @@ echo "Device information saved to $OUTPUT_FILE."
 OUTPUT_FILE="installed_tools.txt"
 
 {
-    echo "Installed Tools and Packages"
-
     if command -v apt &> /dev/null; then
         dpkg --get-selections | grep -v deinstall
     elif command -v yum &> /dev/null; then
@@ -139,11 +132,11 @@ OUTPUT_FILE="installed_tools.txt"
     elif command -v pacman &> /dev/null; then
         pacman -Q
     else
-        echo "No supported package manager found."
+        echo "No supported package manager found"
     fi
 } > "$OUTPUT_FILE"
 
-echo "Installed tools saved to $OUTPUT_FILE."
+echo "Installed tools saved to $OUTPUT_FILE"
 ```
 
 ---
@@ -158,14 +151,12 @@ PROFILE_DIR="$HOME"
 
 {
     echo "File Name | Size | Type | Last Modified"
-    echo "--------------------------------------"
-
     find "$PROFILE_DIR" -maxdepth 1 -type f | while read -r file; do
         echo "$(basename "$file") | $(du -h "$file" | cut -f1) | $(file -b "$file") | $(stat -c '%y' "$file")"
     done
 } > "$OUTPUT_FILE"
 
-echo "User profile file information saved to $OUTPUT_FILE."
+echo "User profile file information saved to $OUTPUT_FILE"
 ```
 
 ---
@@ -179,12 +170,11 @@ OUTPUT_FILE="nmap_scan_results.txt"
 NETWORK="192.168.1.0/24"
 
 {
-    echo "Nmap Scan Results - $(date)"
     nmap -sn "$NETWORK"
     nmap -p 1-65535 "$NETWORK"
 } > "$OUTPUT_FILE"
 
-echo "Nmap scan results saved to $OUTPUT_FILE."
+echo "Nmap scan results saved to $OUTPUT_FILE"
 ```
 
 ---
@@ -198,7 +188,7 @@ echo "This is the first file." > file1.txt
 echo "This is the second file." > file2.txt
 echo "This is the third file." > file3.txt
 
-echo "Files created successfully."
+echo "Files created successfully"
 ```
 
 ---
@@ -210,23 +200,18 @@ echo "Files created successfully."
 
 LOG_FILE="$HOME/user_activity_log.txt"
 
-log_user_activity() {
-    echo "User Activity Log - $(date)"
-    echo "User Logins:"
+{
+    echo "User Activity Log"
     last | head -n -2
-
-    echo "Command History:"
     history | tail -n 20
-}
+} > "$LOG_FILE"
 
-log_user_activity > "$LOG_FILE"
-
-echo "User activity logged to $LOG_FILE."
+echo "User activity logged to $LOG_FILE"
 ```
 
 ---
 
-## TCP & UDP Monitoring Script
+## TCP and UDP Monitoring Script
 
 ```bash
 #!/bin/bash
@@ -234,13 +219,13 @@ echo "User activity logged to $LOG_FILE."
 OUTPUT_FILE="network_traffic_log.txt"
 
 if ! command -v tcpdump &> /dev/null; then
-    echo "tcpdump is not installed."
+    echo "tcpdump is not installed"
     exit 1
 fi
 
 sudo tcpdump -i any -n -c 1000 'tcp or udp' > "$OUTPUT_FILE"
 
-echo "Network traffic captured in $OUTPUT_FILE."
+echo "Network traffic saved to $OUTPUT_FILE"
 ```
 
-
+---
