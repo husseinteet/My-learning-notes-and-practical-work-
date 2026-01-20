@@ -34,32 +34,28 @@
 
 ### Steps
 1. Create the script file
+```bash
 nano my-script.sh
 
 
 2. Add the shebang at the top
-
 
 #!/bin/bash
 
 
 3. Write the command
 
-
 echo "Hello World"
 
-
 4. Give execute permission
-
 
 chmod 777 my-script.sh
 
 
 5. Run the script
 
-
 ./my-script.sh
-
+```
 
 ---
 
@@ -228,3 +224,5 @@ echo "Network traffic saved to $OUTPUT_FILE"
 ```
 
 ---
+
+
