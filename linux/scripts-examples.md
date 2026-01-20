@@ -222,4 +222,4 @@ sudo tcpdump -i any -n -c 1000 'tcp or udp' > "$OUTPUT_FILE"
 echo "Network traffic saved to $OUTPUT_FILE"
 ```
 
----
+
