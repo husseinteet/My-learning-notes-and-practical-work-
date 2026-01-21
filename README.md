@@ -1,5 +1,5 @@
 
-```md
+
 # Cybersecurity Learning Repository
 
 This repository is created to **document and track my learning journey in Cybersecurity and Linux**.  
