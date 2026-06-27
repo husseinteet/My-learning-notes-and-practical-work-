@@ -1,69 +1,75 @@
+# Cybersecurity Learning Journey
 
+Hey, I'm Hussein — a Cybersecurity graduate from Al-Zaytoonah University of Jordan, currently building hands-on skills to work as a SOC Analyst.
 
-# Cybersecurity Learning Repository
+This repository is where I document everything I learn: concepts, notes, and practical takeaways organized by topic. It is not a course dump — it is how I actually study. Writing things down in my own words helps me retain them, and keeping it public keeps me accountable.
 
-This repository is created to **document and track my learning journey in Cybersecurity and Linux**.  
-It serves as a personal knowledge base where I organize concepts, notes, and practical examples that I study during my training.
+---
 
-The main goal of this repository is to:
-- Build a strong technical foundation
-- Practice documenting technical knowledge
-- Create a reference I can revisit in the future
-- Showcase my learning progress in a structured way
+## What I'm Working On
+
+| Area | Status |
+|---|---|
+| Linux Fundamentals | ✅ Completed |
+| CompTIA Security+ | ✅ Completed |
+| TryHackMe — SOC Level 1 | 🔄 In Progress |
 
 ---
 
 ## Repository Structure
 
 ```
-
 .
 ├── linux/
-│   └── Linux fundamentals, bash, scripting, and system basics
+│   └── Linux fundamentals, bash scripting, command-line usage, and system basics
 │
 ├── security-plus/
-│   └── Security+ topics including threats, attacks, social engineering, and security concepts
+│   └── Full Security+ SY0-601 notes across 21 chapters
+│
+├── SOC-Level-1/
+│   └── TryHackMe SOC Level 1 path — room-by-room notes and key takeaways
 │
 └── README.md
-
 ```
 
 ---
 
-## Linux Folder
+## Linux
 
-The **linux** folder contains notes and summaries related to:
-- Linux fundamentals
-- Bash and shell basics
-- Command-line usage
-- Scripting and automation concepts
-- Practical examples and scripts
-
----
-
-## Security+ Folder
-
-The **security-plus** folder contains structured notes based on Security+ concepts, such as:
-- Security roles and controls
-- Threat actors and attack vectors
-- Social engineering techniques
-- Malware types and classifications
-- General cybersecurity fundamentals
+Core notes on working with Linux systems, covering:
+- Filesystem navigation and permissions
+- Bash scripting and shell basics
+- Process management and system administration
+- Command-line tools used in security contexts
 
 ---
 
-## Notes
+## Security+
 
-- This repository is **for learning and documentation purposes**
-- Content will be updated and expanded as I progress
-- Examples and scripts are written for educational use
+Structured notes covering all 21 chapters of the Security+ curriculum:
+- Threat actors, attack vectors, and social engineering
+- Cryptography and PKI
+- Network and cloud security
+- Identity and access management
+- Incident response and digital forensics
+- Risk management and compliance
 
 ---
 
-## Author
+## SOC Level 1 (TryHackMe)
+
+Room-by-room notes from the TryHackMe SOC Level 1 learning path. Each file covers the key concepts from a room, written as a study reference rather than a copy of the original material.
+
+Rooms completed so far:
+- [x] Junior Security Analyst Intro
+- [x] SOC Role in Blue Team
+- [x] Humans as Attack Vectors
+- [x] Systems as Attack Vectors
+- [ ] More in progress...
+
+---
+
+## About Me
 
 **Hussein Altit**  
-Cybersecurity student | Continuous learner
-```
-
-
+Cybersecurity Graduate | Aiming for SOC Analyst roles
